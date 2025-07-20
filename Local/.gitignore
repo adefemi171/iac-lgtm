@@ -1,0 +1,42 @@
+# Docker volumes
+loki-data/
+tempo-data/
+grafana-data/
+
+# Docker Compose
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Backup files
+backup/
+*.backup
+
+# Test files
+test-*.yaml
+*-test.yaml 

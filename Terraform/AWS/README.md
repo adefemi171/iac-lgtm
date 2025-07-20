@@ -34,10 +34,10 @@ AWS ECS Fargate-based observability stack with Loki, Grafana, and Tempo.
 terraform init
 
 # Plan deployment
-terraform plan --var-file=terraform.tfvars
+terraform plan -var-file=terraform.tfvars
 
 # Apply
-terraform apply --var-file=terraform.tfvars
+terraform apply -var-file=terraform.tfvars
 ```
 
 ## Modules

@@ -26,8 +26,6 @@ variable "service_discovery_namespace_arn" {}
 
 variable "log_bucket_name" {}
 
-variable "permissions_boundary_name" {}
-
 variable "hosted_zone_subdomain" {}
 
 variable "service_discovery_namespace_name" {} 

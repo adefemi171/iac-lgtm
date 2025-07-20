@@ -49,7 +49,6 @@ module "tempo" {
   service_discovery_namespace_name = aws_service_discovery_http_namespace.observability.name
   vpc_id                           = var.vpc_id
   subnet_ids                       = var.subnet_ids
-
 }
 
 module "grafana" {

@@ -1,0 +1,27 @@
+server:
+    http_listen_port: ${service_port}
+    log_level: info
+
+distributor:
+    receivers:
+        otlp:
+            protocols:
+                grpc:
+                    endpoint: 0.0.0.0:4317
+                http:
+                    endpoint: 0.0.0.0:4318
+
+storage:
+    trace:
+        backend: local
+        local:
+            path: /tmp/tempo/blocks
+        s3:
+            bucket: ${log_bucket_name}
+            region: ${aws_region}
+            forcepathstyle: true
+            prefix: tempo-traces/
+
+compactor:
+    compaction:
+        block_retention: 48h 

@@ -1,11 +1,3 @@
-data "aws_ssm_parameter" "vpc_id" {
-  name = var.vpc_id
-}
-
-data "aws_ssm_parameter" "private_subnets" {
-  name = var.subnet_ids
-}
-
 data "aws_region" "current" {}
 
 data "aws_caller_identity" "current" {}

@@ -65,7 +65,7 @@ resource "aws_iam_role_policy" "grafana_config_policy" {
           "secretsmanager:GetSecretValue"
         ]
         Resource = [
-          "aws_secretsmanager_secret.grafana_credentials.arn",
+          aws_secretsmanager_secret.grafana_credentials.arn,
           "arn:aws:ssm:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:parameter${aws_ssm_parameter.grafana_config.name}"
         ]
       }

@@ -12,7 +12,7 @@ resource "aws_service_discovery_http_namespace" "observability" {
 resource "aws_security_group" "alb" {
   name_prefix = "${var.cluster_name}-alb-sg-"
   description = "Security group for Application Load Balancer"
-  vpc_id      = data.aws_ssm_parameter.vpc_id.value
+  vpc_id      = var.vpc_id
 
   ingress {
     from_port   = 80
@@ -40,22 +40,9 @@ resource "aws_security_group" "alb" {
   }
 }
 
-# Hosted Zone
-resource "aws_route53_zone" "private" {
-  name = var.hosted_zone_subdomain
-
-  vpc {
-    vpc_id = data.aws_ssm_parameter.vpc_id.value
-  }
-
-  tags = {
-    Name = "${var.cluster_name}-private-zone"
-  }
-}
-
 # ALB DNS Record
 resource "aws_route53_record" "alb" {
-  zone_id = aws_route53_zone.private.zone_id
+  zone_id = var.hosted_zone_id
   name    = var.hosted_zone_subdomain
   type    = "A"
 

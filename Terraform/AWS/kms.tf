@@ -25,12 +25,6 @@ resource "aws_kms_key" "cluster_encryption" {
         Action = [
           "kms:GenerateDataKeyWithoutPlaintext"
         ]
-        Condition = {
-          StringEquals = {
-            "kms:EncryptionContext:aws:ecs:clusterAccount" = [data.aws_caller_identity.current.account_id]
-            "kms:EncryptionContext:aws:ecs:clusterName"    = [var.cluster_name]
-          }
-        }
         Resource = "*"
       },
       {
@@ -42,15 +36,6 @@ resource "aws_kms_key" "cluster_encryption" {
         Action = [
           "kms:CreateGrant"
         ]
-        Condition = {
-          StringEquals = {
-            "kms:EncryptionContext:aws:ecs:clusterAccount" = [data.aws_caller_identity.current.account_id]
-            "kms:EncryptionContext:aws:ecs:clusterName"    = [var.cluster_name]
-          },
-          ForAllValuesStringEquals = {
-            "kms:GrantOperations" = ["Decrypt"]
-          }
-        }
         Resource = "*"
       }
     ]

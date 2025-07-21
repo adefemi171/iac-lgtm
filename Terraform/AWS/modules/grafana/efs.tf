@@ -15,12 +15,12 @@ resource "aws_efs_file_system" "grafana_efs" {
 
 resource "aws_efs_mount_target" "grafana_mount_target_a" {
   file_system_id  = aws_efs_file_system.grafana_efs.id
-  subnet_id       = jsondecode(data.aws_ssm_parameter.private_subnets.value)[0]
+  subnet_id       = split(",", var.subnet_ids)[0]
   security_groups = [aws_security_group.grafana_efs_sg.id]
 }
 
 resource "aws_efs_mount_target" "grafana_mount_target_b" {
   file_system_id  = aws_efs_file_system.grafana_efs.id
-  subnet_id       = jsondecode(data.aws_ssm_parameter.private_subnets.value)[1]
+  subnet_id       = split(",", var.subnet_ids)[1]
   security_groups = [aws_security_group.grafana_efs_sg.id]
 }

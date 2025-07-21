@@ -1,18 +1,11 @@
-data "aws_ssm_parameter" "vpc_id" {
-  name = var.vpc_id
-}
-
-data "aws_ssm_parameter" "private_subnets" {
-  name = var.subnet_ids
-}
-
 data "aws_region" "current" {}
 
 data "aws_caller_identity" "current" {}
 
 resource "aws_secretsmanager_secret" "grafana_credentials" {
-  name        = "${var.cluster_name}-${var.service_name}-credentials"
-  description = "Credentials for Grafana admin user"
+  name                    = "${var.cluster_name}-${var.service_name}-credentials-${formatdate("YYYYMMDD-hhmm", timestamp())}"
+  description             = "Credentials for Grafana admin user"
+  recovery_window_in_days = 0
 
   tags = {
     "clusterName" = var.cluster_name

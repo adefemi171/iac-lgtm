@@ -3,6 +3,7 @@ variable "aws_region" {}
 variable "cluster_name" {}
 
 variable "hosted_zone_subdomain" {}
+variable "hosted_zone_id" {}
 
 variable "load_balancer_scheme" {
   description = "Whether the Load Balancer is internal or internet-facing (Only internal supported as of now)"

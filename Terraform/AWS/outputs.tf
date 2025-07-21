@@ -14,12 +14,6 @@ output "service_discovery_namespace" {
   value       = aws_service_discovery_http_namespace.observability.arn
 }
 
-# Hosted Zone Outputs
-output "hosted_zone_domain_name" {
-  description = "Domain name of the Hosted Zone"
-  value       = aws_route53_zone.private.name
-}
-
 # Application Load Balancer Outputs
 output "application_load_balancer_arn" {
   description = "ARN of the Application Load Balancer"

@@ -2,7 +2,7 @@
 resource "aws_security_group" "tempo_service_sg" {
   name_prefix = "${var.service_name}-sg-"
   description = "Tempo Service Security Group"
-  vpc_id      = data.aws_ssm_parameter.vpc_id.value
+  vpc_id      = var.vpc_id
 
   ingress {
     from_port       = 0

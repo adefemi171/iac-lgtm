@@ -3,10 +3,9 @@ resource "aws_ecs_service" "grafana" {
   cluster         = var.cluster_name
   task_definition = aws_ecs_task_definition.grafana.arn
   desired_count   = var.desired_task_count
-  launch_type     = "FARGATE"
 
   network_configuration {
-    subnets          = jsondecode(data.aws_ssm_parameter.private_subnets.value)
+    subnets          = split(",", var.subnet_ids)
     security_groups  = [aws_security_group.grafana_service_sg.id]
     assign_public_ip = false
   }

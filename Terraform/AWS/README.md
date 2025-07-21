@@ -1,4 +1,4 @@
-# Terraform Observability Stack
+# AWS Terraform Configuration - LGT Stack
 
 AWS ECS Fargate-based observability stack with Loki, Grafana, and Tempo.
 

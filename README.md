@@ -1,11 +1,11 @@
-# IaC-LGTM: Multi-Cloud Observability Stack
+# IaC-LGT: Multi-Cloud Observability Stack
 
 Minimal infrastructure-as-code templates for deploying Loki, Grafana, and Tempo on AWS, Azure, and locally.
 
 ## Top-level directory layout
 
 ```
-📦IAC-LGTM
+📦IAC-LGT
 ├── 📦AWS-IAC
 │   ├── 📦CloudFormation
 │   │   └── 📜README.md

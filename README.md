@@ -4,41 +4,41 @@ Minimal infrastructure-as-code templates for deploying Loki, Grafana, and Tempo 
 
 ## Top-level directory layout
 
-```
-📦IAC-LGT
-├── 📦AWS-IAC
-│   ├── 📦CloudFormation
+```table
+📂IAC-LGT
+├── 📂AWS-IAC
+│   ├── 📂CloudFormation
 │   │   └── 📜README.md
-│   └── 📦SAM
+│   └── 📂SAM
 │       └── 📜README.md
-├── 📦Azure-IAC
-│   ├── 📦ARM
+├── 📂Azure-IAC
+│   ├── 📂ARM
 │   │   └── 📜README.md
-│   └── 📦Bicep
+│   └── 📂Bicep
 │       └── 📜README.md
-├── 📦Local
+├── 📂Local
 │   ├── 📜docker-compose.yml
 │   ├── 📜README.md
 │   ├── 📜send-test-logs.sh
 │   ├── 📜send-test-traces.sh
 │   ├── 📜setup-volumes-simple.sh
 │   ├── 📜.gitignore
-│   ├── 📦config
-│   │   ├── 📦grafana
+│   ├── 📂config
+│   │   ├── 📂grafana
 │   │   │   ├── 📜grafana.ini
-│   │   │   └── 📦provisioning
-│   │   │       └── 📦datasources
+│   │   │   └── 📂provisioning
+│   │   │       └── 📂datasources
 │   │   │           └── 📜datasources.yaml
-│   │   ├── 📦loki
+│   │   ├── 📂loki
 │   │   │   └── 📜loki-config.yaml
-│   │   └── 📦tempo
+│   │   └── 📂tempo
 │   │       └── 📜tempo-config.yaml
-│   └── 📦images
+│   └── 📂images
 │       ├── 📜log_sample.png
 │       └── 📜traces_sample.png
-├── 📦Terraform
+├── 📂Terraform
 │   ├── 📜.gitignore
-│   ├── 📦AWS
+│   ├── 📂AWS
 │   │   ├── 📜main.tf
 │   │   ├── 📜variables.tf
 │   │   ├── 📜outputs.tf
@@ -49,8 +49,8 @@ Minimal infrastructure-as-code templates for deploying Loki, Grafana, and Tempo 
 │   │   ├── 📜ecs.tf
 │   │   ├── 📜terraform.tfvars
 │   │   ├── 📜README.md
-│   │   └── 📦modules
-│   │       ├── 📦grafana
+│   │   └── 📂modules
+│   │       ├── 📂grafana
 │   │       │   ├── 📜main.tf
 │   │       │   ├── 📜variables.tf
 │   │       │   ├── 📜outputs.tf
@@ -60,7 +60,7 @@ Minimal infrastructure-as-code templates for deploying Loki, Grafana, and Tempo 
 │   │       │   ├── 📜lb.tf
 │   │       │   ├── 📜role.tf
 │   │       │   └── 📜grafana-config.ini
-│   │       ├── 📦loki
+│   │       ├── 📂loki
 │   │       │   ├── 📜main.tf
 │   │       │   ├── 📜variables.tf
 │   │       │   ├── 📜outputs.tf
@@ -70,7 +70,7 @@ Minimal infrastructure-as-code templates for deploying Loki, Grafana, and Tempo 
 │   │       │   ├── 📜lb.tf
 │   │       │   ├── 📜role.tf
 │   │       │   └── 📜loki-config.yaml
-│   │       └── 📦tempo
+│   │       └── 📂tempo
 │   │           ├── 📜main.tf
 │   │           ├── 📜variables.tf
 │   │           ├── 📜outputs.tf
@@ -79,9 +79,9 @@ Minimal infrastructure-as-code templates for deploying Loki, Grafana, and Tempo 
 │   │           ├── 📜lb.tf
 │   │           ├── 📜role.tf
 │   │           └── 📜tempo-config.yaml
-│   ├── 📦GCP
+│   ├── 📂GCP
 │   │   └── 📜README.md
-│   └── 📦Azure
+│   └── 📂Azure
 │       └── 📜README.md
 ├── 📜LICENSE
 └── 📜README.md

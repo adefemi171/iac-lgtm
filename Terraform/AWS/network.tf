@@ -1,6 +1,6 @@
 # Service Discovery Namespace
 resource "aws_service_discovery_http_namespace" "observability" {
-  name        = "iaws-ecs-${var.cluster_name}"
+  name        = "ecs-${var.cluster_name}"
   description = "HTTP namespace for ECS Service Connect"
 
   tags = {

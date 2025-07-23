@@ -136,27 +136,27 @@ resource "aws_iam_role_policy" "loki_kms_policy" {
   })
 }
 
-resource "aws_iam_role_policy" "loki_s3_policy" {
-  name = "LokiS3BucketAccess"
-  role = aws_iam_role.loki_task_execution_role.id
+# resource "aws_iam_role_policy" "loki_s3_policy" {
+#   name = "LokiS3BucketAccess"
+#   role = aws_iam_role.loki_task_execution_role.id
 
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Effect = "Allow"
-        Action = [
-          "s3:GetObject",
-          "s3:PutObject",
-          "s3:DeleteObject",
-          "s3:ListBucket",
-          "s3:GetBucketLocation"
-        ]
-        Resource = [
-          "arn:aws:s3:::iaws-csc-observability-logs",
-          "arn:aws:s3:::iaws-csc-observability-logs/*"
-        ]
-      }
-    ]
-  })
-}
+#   policy = jsonencode({
+#     Version = "2012-10-17"
+#     Statement = [
+#       {
+#         Effect = "Allow"
+#         Action = [
+#           "s3:GetObject",
+#           "s3:PutObject",
+#           "s3:DeleteObject",
+#           "s3:ListBucket",
+#           "s3:GetBucketLocation"
+#         ]
+#         Resource = [
+#           "arn:aws:s3:::csc-observability-logs",
+#           "arn:aws:s3:::csc-observability-logs/*"
+#         ]
+#       }
+#     ]
+#   })
+# }
